@@ -1,0 +1,94 @@
+/* ─── container ───────────────────────────────────────────── */
+.add-book-container {
+  --surface: #ffffff;
+  --surface-grad: linear-gradient(135deg, #e0f7fa 0%, #e6eeff 100%);
+  --ring: #536dfe;
+
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: var(--surface-grad);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.04);
+  animation: cardFadeIn 0.7s ease-out;
+}
+
+@keyframes cardFadeIn {
+  from {
+    transform: translateY(30px) scale(0.97);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ─── header ──────────────────────────────────────────────── */
+.add-book-container h1 {
+  text-align: center;
+  margin-bottom: 26px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── form layout ─────────────────────────────────────────── */
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ─── labels & inputs ─────────────────────────────────────── */
+.add-book-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #37474f;
+  letter-spacing: 0.02em;
+}
+
+.add-book-form input {
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  background-color: var(--surface);
+  transition: border 0.25s, box-shadow 0.25s;
+}
+
+.add-book-form input:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px rgba(83, 109, 254, 0.2);
+}
+
+/* ─── button ──────────────────────────────────────────────── */
+.add-book-form button {
+  padding: 12px;
+  background: linear-gradient(120deg, #536dfe 0%, #7c4dff 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transform-origin: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s;
+}
+
+.add-book-form button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* subtle press feedback */
+.add-book-form button:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
